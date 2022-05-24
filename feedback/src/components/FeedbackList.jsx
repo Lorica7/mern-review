@@ -11,7 +11,7 @@ function FeedbackList({feedback}) {
     return (
       <div className="feedback-list">
         {myArr.map (function (item) {
-          return <div> {item.rating}</div>;
+          return <FeedItem key={item.id} item={item} />;
         })}
 
       </div>

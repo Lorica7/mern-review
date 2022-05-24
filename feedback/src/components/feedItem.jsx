@@ -1,9 +1,9 @@
 import React from 'react';
 import {useState} from 'react';
+import Card from './shared/Card';
 
-function FeedItem () {
-  let [rating, setRating] = useState (7);
-  let [text, setText] = useState ('This is an example of a feedback Item');
+function FeedItem({item}) {
+  let [rating, setRating] = useState (item.rating);
 
   const handleClick = prev => {
     setRating (prev => {
@@ -13,9 +13,9 @@ function FeedItem () {
 
   return (
     <div className="card">
-      <div className="card">feedback</div>
-      <div className="num-display">{rating}</div>
-      <div className="text-display">{text}</div>
+
+      <div className="num-display">{item.rating}</div>
+      <div className="text-display">{item.text}</div>
       <button onClick={handleClick}>Click</button>
     </div>
   );
