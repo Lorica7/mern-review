@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 
-function FeedbackItem () {
+function FeedItem () {
   let [rating, setRating] = useState (7);
   let [text, setText] = useState ('This is an example of a feedback Item');
 
@@ -21,4 +21,4 @@ function FeedbackItem () {
   );
 }
 
-export default FeedbackItem;
+export default FeedItem;

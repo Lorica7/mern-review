@@ -8,10 +8,10 @@ function Header({text, bgColor}) {
 
   return (
     <header style={headerStyles}>
-      <dvi className="container">
+      <div className="container">
         <h1>Feedback App</h1>
         <h2>{text}</h2>
-      </dvi>
+      </div>
     </header>
   );
 }
