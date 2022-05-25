@@ -1,24 +1,20 @@
 import React from 'react';
-import {useState} from 'react';
+import PropTypes from 'prop-types';
 import Card from './shared/Card';
 
 function FeedItem({item}) {
-  let [rating, setRating] = useState (item.rating);
-
-  const handleClick = prev => {
-    setRating (prev => {
-      return prev + 1;
-    });
-  };
-
   return (
-    <div className="card">
+    <Card>
 
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
-      <button onClick={handleClick}>Click</button>
-    </div>
+
+    </Card>
   );
 }
+
+FeedItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
 
 export default FeedItem;
