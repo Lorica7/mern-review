@@ -7,11 +7,10 @@ function FeedbackList({feedback, handleDelete}) {
     return <p> No Feedback Yet</p>;
   } else {
     console.log (feedback);
-    const myArr = feedback.FeedbackData;
-    console.log (myArr);
+
     return (
       <div className="feedback-list">
-        {myArr.map (function (item) {
+        {feedback.map (function (item) {
           return (
             <FeedItem key={item.id} item={item} handleDelete={handleDelete} />
           );
