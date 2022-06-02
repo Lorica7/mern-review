@@ -9,7 +9,7 @@ function FeedItem({item, handleDelete}) {
 
       <div className="num-display">{item.rating}</div>
       <button className="close" onClick={() => handleDelete (item.id)}>
-        <FaTimes color="purple" />\
+        <FaTimes color="purple" />
       </button>
       <div className="text-display">{item.text}</div>
 

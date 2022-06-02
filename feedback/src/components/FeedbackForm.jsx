@@ -12,7 +12,7 @@ function FeedbackForm () {
   return (
     <Card>
       <form>
-        <h2>How would you rate your service? </h2>
+        <h2 className="rate">How would you rate your service? </h2>
         <div className="input-group">
           <input
             onChange={handleTextChange}
@@ -20,7 +20,7 @@ function FeedbackForm () {
             placeholder="Write a Review"
             value={text}
           />
-          <Button type="submit"> Send</Button>
+          <Button className="send" type="submit"> Send</Button>
         </div>
       </form>
     </Card>

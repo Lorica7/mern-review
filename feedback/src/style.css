@@ -116,6 +116,10 @@ input {
     flex-grow: 2;
     border: none;
     font-size: 16px;
+    min-height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
 }
 
 input:focus {
@@ -160,7 +164,8 @@ input:focus {
 }
 
 .btn-primary {
-    background-color: #202142;
+    /* background-color: #202142; */
+    background-color: #fff;
 }
 
 .btn-secondary {
@@ -213,6 +218,16 @@ input:focus {
 
 .about p {
     margin: 10px 0;
+}
+
+.send{
+    min-width: 75px;
+    border-radius: 10px;
+   
+}
+
+.rate{
+    margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {
