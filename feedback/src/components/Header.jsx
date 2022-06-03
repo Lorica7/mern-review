@@ -13,7 +13,7 @@ function Header({text, bgColor}) {
         <h2>{text}</h2>
       </div>
     </header>
-  );
+  )
 }
 
 Header.defaultProps = {

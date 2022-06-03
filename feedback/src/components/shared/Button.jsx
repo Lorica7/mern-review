@@ -6,7 +6,7 @@ function Button({children, version, type, isDisabled}) {
     <button type={type} disabled={isDisabled} className={`btn-${version} send`}>
       {children}
     </button>
-  );
+  )
 }
 
 Button.defaultProps = {

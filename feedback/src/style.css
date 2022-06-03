@@ -97,6 +97,7 @@ header {
 
 [type='radio'] {
     opacity: 0;
+    
 }
 
 [type='radio']:checked~label {

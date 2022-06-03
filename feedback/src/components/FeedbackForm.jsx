@@ -16,17 +16,32 @@ function FeedbackForm () {
       setMessage (null);
     } else if (text !== '' && text.trim ().length <= 10) {
       setMessage ('Text must be at least 10 characters');
-      setBtnDisabled (false);
+      setBtnDisabled (true);
     } else {
       setMessage (null);
       setBtnDisabled (false);
     }
-    setText (e.target.value);
-    console.log (text);
+    setText(e.target.value)
+ 
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (text.trim().length > 10) {
+      const newFeedback = {
+        text,
+        rating
+      }
+      console.log(newFeedback);
+      setText('')
+    }
+
+
+}
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2 className="rate">How would you rate your service? </h2>
         <RatingSelect select={rating => setRating (rating)} />
         <div className="input-group">
@@ -36,14 +51,14 @@ function FeedbackForm () {
             placeholder="Write a Review"
             value={text}
           />
-          <Button className="send" type="submit" isDisabled={btnDisabled}>
+          <Button  type="submit" isDisabled={btnDisabled}>
             Send
           </Button>
         </div>
         {message && <div className="message">{message}</div>}
       </form>
     </Card>
-  );
+  )
 }
 
 export default FeedbackForm;

@@ -14,7 +14,7 @@ function FeedItem({item, handleDelete}) {
       <div className="text-display">{item.text}</div>
 
     </Card>
-  );
+  )
 }
 
 FeedItem.propTypes = {
