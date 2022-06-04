@@ -22,7 +22,7 @@ function RatingSelect (select) {
           onChange={handleChange}
           checked={selected === 1}
         />
-        <label htmlFor="num1">1</label>;
+        <label htmlFor="num1">1</label>
       </li>
       <li>
         <input
