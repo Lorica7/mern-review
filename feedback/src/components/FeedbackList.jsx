@@ -1,6 +1,7 @@
 import React from 'react';
 import FeedItem from './feedItem';
 import PropTypes from 'prop-types';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function FeedbackList({feedback, handleDelete}) {
   if (!feedback || feedback.length === 0) {
@@ -8,16 +9,34 @@ function FeedbackList({feedback, handleDelete}) {
   } else {
     console.log (feedback);
 
-    return (
-      <div className="feedback-list">
-        {feedback.map (function (item) {
-          return (
-            <FeedItem key={item.id} item={item} handleDelete={handleDelete} />
-          );
-        })}
+    // return (
+    //   <div className="feedback-list">
+    //     {feedback.map (function (item) {
+    //       return (
+    //         <FeedItem key={item.id} item={item} handleDelete={handleDelete} />
+    //       );
+    //     })}
 
-      </div>
-    );
+    //   </div>
+    // );
+     return (
+         <div className='feedback-list'>
+      <AnimatePresence>
+        {feedback.map((item) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            layout
+          >
+            <FeedItem key={item.id} item={item} handleDelete={handleDelete} />;
+
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+    )
   }
 }
 
