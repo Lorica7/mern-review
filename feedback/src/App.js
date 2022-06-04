@@ -7,6 +7,8 @@ import FeedbackForm from './components/FeedbackForm';
 import { v4 as uuidv4 } from 'uuid'
 import AboutPage from "./Pages/AboutPage";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import AboutIconLink from './components/AboutIconLink';
+import Post from './components/Post';
 
 function App() {
 
@@ -43,10 +45,12 @@ function App() {
         }>
         
           </Route>
-          <Route path='/about' element={<AboutPage/>} /> 
+          <Route path='/about' element={<AboutPage />} /> 
+          <Route path="/post:id:name" element={<Post />} />;
+
           </Routes>
       </div>
-    
+    <AboutIconLink/>
    </Router>
   )
 }
