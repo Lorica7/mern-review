@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import {Navigate} from 'react-router-dom'
+import {Navigate, useNavigate, Route, Routes} from 'react-router-dom'
 
 
 import React from 'react'
@@ -24,7 +24,10 @@ function Post() {
       <div>
           <h1>Post {params.id}</h1>
           <p> Name: {params.name}</p>
-<button onClick={onClick}>Click</button>
+          <button onClick={onClick}>Click</button>
+          <Routes>
+              <Route path='/show' element={<h1>Hello Moon</h1>}/>
+          </Routes>
       </div>
   )
 }

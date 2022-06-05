@@ -9,6 +9,7 @@ import AboutPage from "./Pages/AboutPage";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AboutIconLink from './components/AboutIconLink';
 import Post from './components/Post';
+import { FeedbackProvider } from './context/FeedbackContext';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
 
 
   return (
-    
+    <FeedbackProvider>
       <Router>
       <Header text='Hello World' bgColor="blueviolet"/>
       <div className="container">
@@ -46,12 +47,13 @@ function App() {
         
           </Route>
           <Route path='/about' element={<AboutPage />} /> 
-          <Route path="/post:id:name" element={<Post />} />;
+          <Route path="/post/*" element={<Post />} />;
 
           </Routes>
       </div>
     <AboutIconLink/>
-   </Router>
+      </Router>
+      </FeedbackProvider>
   )
 }
 
