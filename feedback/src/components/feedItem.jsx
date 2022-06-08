@@ -16,9 +16,10 @@ function FeedItem({ item }) {
       <button className="close" onClick={() => deleteFeedback(item.id)}>
         <FaTimes color="purple" />
       </button>
-      <button className="edit">
-        <FaEdit color='purple' onClick={() => editFeedback(item)}/>
-      </button>
+  <button onClick={() => editFeedback (item)} className="edit">
+  <FaEdit color="purple" />
+</button>
+
       <div className="text-display">{item.text}</div>
 
     </Card>

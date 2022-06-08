@@ -10,7 +10,9 @@ const {feedbackEdit} = useContext (FeedbackContext);
   const handleChange = e => {
     console.log(+e.currentTarget.value);
     //the plus sign in front of the e changes the value from string to number
-    setSelected (+e.currentTarget.value); 
+    setSelected(+e.currentTarget.value); 
+    select (+e.currentTarget.value);
+
   };
 
   useEffect(() => {
